@@ -116,13 +116,7 @@ class MetaAnime(MetaBase):
                             self.end_episode = int(end_episode)
                             self.total_episodes = (self.end_episode - self.begin_episode) + 1
                         else:
-                            # self.total_episodes = 1
-
-                            # 似乎有TMDB数据未更新，只显示一集动画片，然后下载完一集就取消了订阅的情况，尝试修正
-                            # 注：此类派生自类 MetaBase
-                            # by: minquejoe
-                            self.total_episodes = 999
-                            
+                            self.total_episodes = 1
                     except Exception as err:
                         ExceptionUtils.exception_traceback(err)
                         self.begin_episode = None
